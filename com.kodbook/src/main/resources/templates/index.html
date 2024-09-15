@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KodBook</title>
+    <style>
+        body {
+            background-color: #fff; /* White background */
+            font-family: Arial, sans-serif;
+            color: #000; /* Black text */
+        }
+
+        h1 {
+            color: #000; /* Black for main heading */
+            text-align: center;
+            font-size: 3em;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #f1c40f; /* Yellow for subheading */
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: block;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 400px;
+            border: 2px solid #f1c40f; /* Yellow border for the form */
+            background-color: #000; /* Black background for the form */
+            border-radius: 8px;
+        }
+
+        label {
+            color: #fff; /* White labels */
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #f1c40f; /* Yellow border for input fields */
+            border-radius: 4px;
+            background-color: #fff; /* White input fields */
+            color: #000; /* Black text inside input fields */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #f1c40f; /* Yellow button */
+            color: #000; /* Black text on the button */
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d4ac0d; /* Darker yellow on hover */
+        }
+
+        hr {
+            border: 1px solid #f1c40f; /* Yellow horizontal lines */
+        }
+
+        a {
+            color: #f1c40f; /* Yellow links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Align links at the center of the page */
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>KodBook</h1>
+    <h3>#1 social media app</h3>
+    <hr>
+    <form action="/login" method="post">
+        <label>USERNAME :</label>
+        <input type="text" name="username">
+        <br>
+        <label>PASSWORD :</label>
+        <input type="password" name="password">
+        <br>
+        <input type="submit" value="LOGIN">
+    </form>
+    <hr>
+    <a href="/openResetPassword">Forgot Password?</a>
+    <a href="/openSignUp">Create new account</a>
+</body>
+</html>

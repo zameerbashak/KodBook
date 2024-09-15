@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/createPost" method="POST" enctype="multipart/form-data">
+		<label for="caption">Enter Caption:</label>
+		<textarea  name="caption"  placeholder="Enter caption here..." required></textarea><br><br>
+			
+		 <label for="photo">Upload Photo:</label> 
+		 <input type="file" name="photo" accept="image/*" required><br><br>
+
+		<button type="submit">Post</button>
+	</form>
+	<form action="/createPost" method="GET">
+	</form>
+
+</body>
+</html>

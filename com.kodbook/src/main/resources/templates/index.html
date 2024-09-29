@@ -1,109 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KodBook</title>
-    <style>
-        body {
-            background-color: #fff; /* White background */
-            font-family: Arial, sans-serif;
-            color: #000; /* Black text */
-        }
+<meta charset="ISO-8859-1">
+<title>KodBook</title>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+<style>
+body, h1, form, input, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+	
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color:#f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        h1 {
-            color: #000; /* Black for main heading */
-            text-align: center;
-            font-size: 3em;
-            margin-top: 30px;
-        }
+/* Main container styling */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+    margin-right: 100px;
+}
 
-        h3 {
-            color: #f1c40f; /* Yellow for subheading */
-            text-align: center;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
+/* Form styling */
+form {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-        form {
-            display: block;
-            margin: 0 auto;
-            padding: 20px;
-            max-width: 400px;
-            border: 2px solid #f1c40f; /* Yellow border for the form */
-            background-color: #000; /* Black background for the form */
-            border-radius: 8px;
-        }
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
 
-        label {
-            color: #fff; /* White labels */
-            font-weight: bold;
-        }
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
 
-        input[type="text"],
-        input[type="password"] {
-            width: 90%;
-            padding: 10px;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #f1c40f; /* Yellow border for input fields */
-            border-radius: 4px;
-            background-color: #fff; /* White input fields */
-            color: #000; /* Black text inside input fields */
-        }
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #1877f2;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #f1c40f; /* Yellow button */
-            color: #000; /* Black text on the button */
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+input[type="submit"]:hover {
+    background: #1558e0;
+}
 
-        input[type="submit"]:hover {
-            background-color: #d4ac0d; /* Darker yellow on hover */
-        }
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
 
-        hr {
-            border: 1px solid #f1c40f; /* Yellow horizontal lines */
-        }
+/* Link styling */
+a {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        a {
-            color: #f1c40f; /* Yellow links */
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Align links at the center of the page */
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+a:hover {
+    text-decoration: underline;
+}
+</style>
 </head>
 <body>
-    <h1>KodBook</h1>
-    <h3>#1 social media app</h3>
-    <hr>
-    <form action="/login" method="post">
-        <label>USERNAME :</label>
-        <input type="text" name="username">
-        <br>
-        <label>PASSWORD :</label>
-        <input type="password" name="password">
-        <br>
-        <input type="submit" value="LOGIN">
-    </form>
-    <hr>
-    <a href="/openResetPassword">Forgot Password?</a>
-    <a href="/openSignUp">Create new account</a>
+
+	<h1>Welcome to KodBook!!</h1>
+	<hr>
+	<form action="/login" method="post">
+	<label>USERNAME:</label>
+	<input type="text" name="username" placeholder="Enter Username">
+	<br><br>
+	<label>PASSWORD:</label>
+	<input type="password" name="password" placeholder="Enter Password">
+	<br><br>
+	
+	<input type="submit" value="LOGIN">
+	<hr>
+	<a href = "/openResetPassword">Forgot Password?</a>
+	<a href = "/openSignUp">Create new account</a>
+	</form>
 </body>
 </html>

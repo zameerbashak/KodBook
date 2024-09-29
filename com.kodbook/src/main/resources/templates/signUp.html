@@ -1,33 +1,150 @@
 <!DOCTYPE html>
 <html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+
+body, h1, form, input, label, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main container styling */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Label and input styling */
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+ margin: 0 5px 0 0;
+    vertical-align: middle;
+
+    }
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #1877f2;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: #1558e0;
+}
+
+/* Link styling */
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.gender-container {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 8px; /* Spacing between radio buttons */
+}
+
+.gender-label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+</style>
+    <meta charset="ISO-8859-1">
+    <title>KodBook Sign Up</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}"> 
 </head>
 <body>
-<h1>Create account on KodBook</h1>
-	<hr>
-<form action="/signUp" method="post">
-<label>USERNAME :</label>
-	<input type="text" name="username" >
-	<br><br>
-<label>EMAIL :</label>
-	<input type="email" name="email" >
-	<br><br>
-	<label>PASSWORD :</label>
-	<input type="password" name="password" >
-	<br><br>
-<label>DOB :</label>
-	<input type="date" name="dob" >
-	<br><br>
-<label>Gender :</label>
-	<label>Male</label><input type="radio" name="gender" value="M" >
-	<label>Female</label><input type="radio" name="gender" value="F" >
-	<label>Others</label><input type="radio" name="gender" value="O" >
-	<br><br>
-	<input type="submit" value="SIGN UP">
-	<hr>
-	<a href="/">Already have account? Login instead</a>	
-</form>
+    <h1>KodBook SignUp Page</h1>
+   <form action="/signUp" method="post">
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <br><br>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <br><br>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <br><br>
+        <label>DOB:</label>
+        <input type="date" name="dob">
+        <br><br>  
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="M"> MALE</label>
+            <label><input type="radio" name="gender" value="F"> FEMALE</label>
+            <label><input type="radio" name="gender" value="O"> OTHER</label>
+        </div>
+        <br><br>
+        <input type="submit" value="SIGN UP">
+        <hr>
+        <a href="/">Already have account? Login instead</a>
+    </form>
 </body>
 </html>
+</html>
+0 comments on comm

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/editprofile.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<h1>Edit Profile</h1>
+    <nav>
+        <span><i class="fas fa-user"></i> <span th:text="${session.username}"></span></span>
+        <a href="/goHome"><i class="fas fa-newspaper"></i> News Feed</a>
+        <a href="/openNewPost"><i class="fas fa-edit"></i> Create Post</a>
+        <a href="/openMyProfile"><i class="fas fa-user-circle"></i> My Profile</a>
+    </nav>
+
+    <h2>Edit Profile</h2>
+    <form action="/updateProfile" method="post" enctype="multipart/form-data">
+        <label for="dob">DOB:-</label>
+        <input type="date" name="dob" placeholder="Enter Date Of Birth">
+
+        <br>
+        <div class="gender-container">
+                <label for="gender">GENDER:-</label>
+
+            <label class="gender-label">MALE</label><input type="radio" name="gender" value="M">
+            <label class="gender-label">FEMALE</label><input type="radio" name="gender" value="F">
+            <label class="gender-label">OTHER</label><input type="radio" name="gender" value="O">
+        </div>
+
+        <label for="city">CITY:-</label>
+        <input type="text" name="city">
+<br>
+        <label for="bio">BIO:-</label>
+        <input type="text" name="bio">
+<br>
+        <label for="college">COLLEGE:-</label>
+        <input type="text" name="college">
+<br>
+        <label for="linkedIn">LINKEDIN:-</label>
+        <input type="text" name="linkedIn">
+<br>
+        <label for="gitHub">GITHUB:-</label>
+        <input type="text" name="gitHub">
+
+<br>
+        <label for="profilePic">Profile Picture:-</label>
+        <input type="file" name="profilePic" accept="image/*">
+
+        <input type="submit" value="Update Profile">
+    </form>
+</body>
+</html>

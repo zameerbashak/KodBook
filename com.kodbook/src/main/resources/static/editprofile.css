@@ -1,82 +1,111 @@
-/* General body styling */
+/* General page styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+	font-family: 'Poppins', sans-serif;
+	background-color: #FFD7C4;
+	color: #2A2A2A;
+	margin: 0;
+	padding: 0;
 }
 
-/* Navigation bar styling */
+/* Navigation bar */
 nav {
-    background-color: #333;
-    padding: 10px;
+	background-color: #7695FF;
+	padding: 15px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
+	color: white;
+	font-size: 1.2em;
+	text-decoration: none;
+	padding: 10px 15px;
+	transition: background-color 0.3s ease;
+	border-radius: 10px;
 }
 
 nav a:hover {
-    color: #ff9800;
+	background-color: #9DBDFF;
 }
 
-nav span {
-    color: white;
-    font-size: 16px;
-    margin-right: 20px;
+.edit-profile {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+.edit-card{
+	background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
 /* Form and input styling */
 form {
-    margin: 20px;
+	margin: 20px;
 }
 
 form label {
-    font-weight: bold;
+	font-weight: bold;
 }
 
-form input[type="text"],
-form input[type="date"],
-form input[type="file"] {
-    padding: 8px;
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+form input[type="text"], form input[type="date"], form input[type="file"]
+	{
+	padding: 8px;
+	width: 100%;
+	max-width: 400px;
+	margin: 10px 0;
+    border: 2px solid #7695FF; /* Add a border to the search box */
+	border-radius: 10px;
 }
 
 form input[type="radio"] {
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 form input[type="submit"] {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
+    background-color: #7695FF;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 4px;
 }
 
 form input[type="submit"]:hover {
-    background-color: #ff9800;
+    background-color: #9DBDFF; /* Match hover color with the search box */
 }
 
 /* Profile picture styling */
 .profile-pic {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the entire space */
-    margin-left: auto; /* Pushes it to the right if needed */
+	width: 40px; /* Adjust size as needed */
+	height: 40px; /* Adjust size as needed */
+	border-radius: 50%; /* Makes the image circular */
+	object-fit: cover; /* Ensures the image covers the entire space */
+	margin-left: auto; /* Pushes it to the right if needed */	
 }
 
 /* Icon styling */
 nav i {
-    margin-right: 8px;
+	margin-right: 8px;
 }
+/* Profile Header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+}
+.profile-picture img {
+   width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    border: 5px solid #7695FF; /* Adds a border around the profile picture */
+}
+    

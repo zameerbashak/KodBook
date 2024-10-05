@@ -59,29 +59,70 @@ public class PostController {
 	}
 
 	@PostMapping("/likePost")
-	public String likePost(@RequestParam Long id, Model model) {
-		Post post = service.getPost(id);
-		post.setLikes(post.getLikes() + 1);
-		service.updatePost(post);
+	public String likePost(@RequestParam Long id, Model model, HttpSession session) {
+	    // Get the current user
+	    String username = (String) session.getAttribute("username");
 
-		List<Post> allPosts = service.fetchAllPosts();
-		model.addAttribute("allPosts", allPosts);
-		return "home";
+	    // Retrieve the post by ID
+	    Post post = service.getPost(id);
+
+	    // Initialize the likedByUsers list if it's null
+	    if (post.getLikedByUsers() == null) {
+	        post.setLikedByUsers(new ArrayList<>()); // Initialize if null
+	    }
+
+	    // Check if the user has already liked the post
+	    List<String> likedByUsers = post.getLikedByUsers();
+	    if (!likedByUsers.contains(username)) {
+	        // If user hasn't liked the post, increment likes and add user to likedByUsers
+	        post.setLikes(post.getLikes() + 1);
+	        likedByUsers.add(username);
+	        post.setLikedByUsers(likedByUsers);
+	        service.updatePost(post);
+	    }
+
+	    // Fetch and display all posts in the view
+	    List<Post> allPosts = service.fetchAllPosts();
+	    model.addAttribute("allPosts", allPosts);
+
+	    return "home";
 	}
+
+
 
 	@PostMapping("/addComment")
-	public String addComment(@RequestParam Long id, @RequestParam String comment, Model model) {
-		Post post = service.getPost(id);
-		List<String> comments = post.getComments();
-		if (comments == null) {
-			comments = new ArrayList<String>();
-		}
-		comments.add(comment);
-		post.setComments(comments);
-		service.updatePost(post);
+	public String addComment(@RequestParam Long id, @RequestParam String comment, Model model, HttpSession session) {
+	    // Get the logged-in user
+	    String username = (String) session.getAttribute("username");
+	    User user = userService.getUser(username);
 
-		List<Post> allPosts = service.fetchAllPosts();
-		model.addAttribute("allPosts", allPosts);
-		return "home";
+	    // Retrieve the post by ID
+	    Post post = service.getPost(id);
+
+	    // Initialize the comment list if it's null
+	    List<String> comments = post.getComments();
+	    if (comments == null) {
+	        comments = new ArrayList<>();
+	    }
+
+	    // Add the comment with the username in the format "username: comment"
+	    String commentWithUser = username + ": " + comment;
+	    comments.add(commentWithUser);
+
+	    // Update post with the new comment list
+	    post.setComments(comments);
+	    service.updatePost(post);
+
+	    // Fetch and display all posts in the view
+	    List<Post> allPosts = service.fetchAllPosts();
+	    model.addAttribute("allPosts", allPosts);
+
+	    return "home";
 	}
+	@GetMapping("/deletePost")
+	public String deletePost(@RequestParam Long id) {
+		service.deletePost(id);
+		return "myProfile";
+	}
+
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search User</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/search.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <span th:text="${session.username}"></span>
+        <a href="/goHome"><i class="fas fa-home"></i> News feed</a>
+        <a href="/openNewPost"><i class="fas fa-plus-circle"></i> Create post</a>
+        <a href="/openMyProfile"><i class="fas fa-user-circle"></i> My profile</a>
+        <a href="/searchUser"><i class="fas fa-search"></i> Search</a> 
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> LOG OUT</a>
+    </nav>
+    
+    <form action="/search" method="get">
+        <input type="text" id="username" name="username" placeholder="user name here" required>
+        <button type="submit">Find</button>
+    </form>
+
+    <div class="users-container">
+        <!-- If a specific user is searched -->
+        <div th:if="${searchedUser != null}">
+            <div class="user-card">
+                <div class="user-info">
+                    <div class="profile-pic">
+                        <img th:if="${searchedUser.photoBase64}"
+                             th:src="'data:image/jpeg;base64,' + ${searchedUser.photoBase64}" 
+                             alt="User Photo">
+                    </div>
+                    <a th:href="@{/visitProfile(profileName=${searchedUser.username})}" class="username" th:text="${searchedUser.username}">Unknown</a>
+                </div>
+                <div class="user-bio">
+                    <text th:text="${searchedUser.bio}"></text>
+                </div>
+            </div>
+        </div>
+
+        <!-- If no specific user is searched, display all users -->
+        <div th:if="${searchedUser == null}">
+            <samp th:each="user : ${allUsers}">
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="profile-pic">
+                            <img th:if="${user.photoBase64}"
+                                 th:src="'data:image/jpeg;base64,' + ${user.photoBase64}" 
+                                 alt="User Photo">
+                        </div>
+                        <a th:href="@{/visitProfile(profileName=${user.username})}" class="username" th:text="${user.username}">Unknown</a>
+                    </div>
+                    <div class="user-bio">
+                        <text th:text="${user.bio}"></text>
+                    </div>
+                </div>
+            </samp>
+        </div>
+    </div>
+</body>
+</html>

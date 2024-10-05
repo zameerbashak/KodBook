@@ -1,0 +1,98 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFD7C4;
+    color: #2A2A2A;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #7695FF;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    background-color: #9DBDFF;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #9DBDFF;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFD7C4;
+    margin-bottom: 10px;
+}
+
+.username h1 {
+    color: #2A2A2A;
+    margin: 0;
+}
+.create-post-card{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;	
+}
+.create-card{
+	background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-bottom: 20px;
+    padding: 20px;    
+}
+textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #7695FF;
+    resize: none;
+}
+form input[type="file"]
+	{
+	padding: 8px;
+	width: 100%;
+	max-width: 400px;
+	margin: 10px 0;
+	border: 2px solid #7695FF;
+	border-radius: 10px;
+}
+input[type="submit"] {
+    background-color: #7695FF;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #9DBDFF; /* Match hover color with the search box */
+}

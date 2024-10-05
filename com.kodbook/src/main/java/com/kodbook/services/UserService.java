@@ -1,5 +1,7 @@
 package com.kodbook.services;
 
+import java.util.List;
+
 import com.kodbook.entities.User;
 
 public interface UserService {
@@ -13,5 +15,11 @@ public interface UserService {
 	User getUser(String username);
 
 	void updateUser(User user);
+
+	User SerachUser(String username);
+
+	List<User> fetchAllUser();
+
+	User search(String username);
 
 }

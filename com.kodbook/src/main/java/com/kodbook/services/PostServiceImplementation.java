@@ -39,4 +39,10 @@ public class PostServiceImplementation implements PostService {
 	public void updatePost(Post post) {
 		repo.save(post);		
 	}
+
+	@Override
+	public void deletePost(Long id) {
+		repo.deleteById(id);
+		
+	}
 }

@@ -1,5 +1,6 @@
 package com.kodbook.entities;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Post {
 	private Long id;
 	private String caption;
 	private int likes;
+	private List<String> likedByUsers = new ArrayList<>(); // This stores usernames who liked the post
 	private List<String> comments;
 	@ManyToOne
 	private User user;
@@ -117,6 +119,16 @@ public class Post {
 	public String toString() {
 		return "Post [id=" + id + ", caption=" + caption + ", likes=" + likes + ", comments=" + comments + ", user="
 				+ user + ", photo=" + Arrays.toString(photo) + "]";
+	}
+
+
+	public List<String> getLikedByUsers() {
+		return likedByUsers;
+	}
+
+
+	public void setLikedByUsers(List<String> likedByUsers) {
+		this.likedByUsers = likedByUsers;
 	}
 
 

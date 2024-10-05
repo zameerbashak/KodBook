@@ -14,6 +14,7 @@
         <a href="/openNewPost"><i class="fas fa-plus-circle"></i> Create post</a>
         <a href="/openMyProfile"><i class="fas fa-user-circle"></i> My profile</a>
         <a href="/openEditProfile"><i class="fas fa-edit"></i> Edit profile</a>
+        <a href="/searchUser"><i class="fas fa-search"></i> Search</a> 
         <a href="/logout"><i class="fas fa-sign-out-alt"></i> LOG OUT</a>
     </nav>
 
@@ -109,6 +110,11 @@
                         </li>
                     </ul>
                 </div>
+               <!-- Delete post -->
+                <form action="/deletePost" method="get" class="like-form">
+                    <input type="hidden" name="id" th:value="${post.id}">
+                    <input type="submit" value="Delete Post">
+                </form>
             </div>
         </span>
     </div>

@@ -1,0 +1,146 @@
+/* General page styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFD7C4;
+    color: #2A2A2A;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #7695FF;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    background-color: #9DBDFF;
+}
+
+/* Textarea styling */
+textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #7695FF;
+    resize: none;
+}
+
+/* Users Container */
+.users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Username styling */
+a.username {
+    color: black; /* Set the link color to black */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+a.username:hover {
+    color: black; /* Keep the color black when hovering */
+}
+
+/* Post Card */
+.user-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 500px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Flexbox for profile picture and username */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between the bio and the picture/username */
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+        border: 3px solid #7695FF; /* Adds a border around the profile picture */
+    
+}
+
+/* Adjusting profile picture of user */
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* User bio styling */
+.user-bio {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+/* Center the search box on the page */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Adjust as needed for spacing */
+}
+
+/* Center the search box vertically */
+form input[type="text"] {
+    width: 300px; /* Set the width of the search box */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #7695FF; /* Add a border to the search box */
+    transition: border-color 0.3s ease; /* Smooth transition effect */
+    outline: none; /* Remove default focus outline */
+    font-size: 1.1em;
+}
+
+/* Add hover effect for the search box */
+form input[type="text"]:hover, form input[type="text"]:focus {
+    border-color: #9DBDFF; /* Lighter blue when hovered/focused */
+}
+from input[type="submit"]:hover{
+	background-color:#9DBDFF;
+}
+/* Style the button */
+form button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #7695FF;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for the button */
+form button:hover {
+    background-color: #9DBDFF; /* Match hover color with the search box */
+}

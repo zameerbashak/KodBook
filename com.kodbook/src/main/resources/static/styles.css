@@ -1,7 +1,7 @@
 /* General page styling */
 body {
     font-family: 'Poppins', sans-serif;  /* Funky but classy font */
-    background-color: #9DBDFF;           /* Light, calming background */
+    background-color: #FFD7C4;           /* Light, calming background */
     color: #2A2A2A;                      /* Text color */
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color:#FFD7C4;
 }
 
 h1 {

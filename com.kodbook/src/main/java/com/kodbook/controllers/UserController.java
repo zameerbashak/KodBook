@@ -14,6 +14,7 @@ import com.kodbook.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,9 +63,10 @@ public class UserController {
 	public String updateProfile(@RequestParam String dob, @RequestParam String gender,
 			@RequestParam String city, @RequestParam String bio,
 			@RequestParam String college, @RequestParam String linkedIn,
-			@RequestParam String gitHub, @RequestParam MultipartFile profilePic
+			@RequestParam(value="gitHub",required=false) String gitHub, @RequestParam(value="profilePic",required=false) MultipartFile profilePic
 			, HttpSession session,
 			Model model) {
+		System.out.println("here");
 		String username = (String) session.getAttribute("username");
 		
 		//fetch user object using username
@@ -86,5 +88,11 @@ public class UserController {
 		service.updateUser(user);
 		model.addAttribute("user", user);
 		return "myProfile";
+	}
+	@GetMapping("/search")
+	public String search(@RequestParam String username,Model model) {
+		User searchedUser =service.search(username);
+        model.addAttribute("searchedUser", searchedUser);
+		return "searchUser";
 	}
 }

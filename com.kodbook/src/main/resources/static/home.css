@@ -182,3 +182,23 @@ input[type="file"] {
     padding: 20px;
     width: 100%;
 }
+a.username {
+    color: black; /* Set the link color to black */
+    text-decoration: none; /* Remove underline if you want */
+}
+
+a.username:visited {
+    color: black; /* Keep the color black even after being visited */
+}
+
+a.username:hover {
+    color: black; /* Keep the color black when hovering */
+}
+
+a.username:active {
+    color: black; /* Keep the color black when the link is active (clicked) */
+}
+.username {
+    font-size: 1.3em;
+    font-weight: bold;
+}

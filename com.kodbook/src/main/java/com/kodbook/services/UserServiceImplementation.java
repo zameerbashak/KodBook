@@ -1,5 +1,7 @@
 package com.kodbook.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,5 +45,20 @@ public class UserServiceImplementation implements UserService {
 	@Override
 	public void updateUser(User user) {
             repo.save(user);		
+	}
+
+	@Override
+	public User SerachUser(String username) {
+		return repo.findByUsername(username);
+	}
+
+	@Override
+	public List<User> fetchAllUser() {
+		return repo.findAll();
+	}
+
+	@Override
+	public User search(String username) {
+		return repo.findByUsername(username);
 	}
 }

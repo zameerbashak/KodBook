@@ -44,6 +44,8 @@ nav a:hover {
     width: 500px;
     margin-bottom: 20px;
     padding: 20px;
+    align-items: center;
+    
 }
 
 /* Form and input styling */
@@ -97,6 +99,7 @@ nav i {
 }
 /* Profile Header */
 .profile-header {
+	margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;        
@@ -108,4 +111,4 @@ nav i {
     object-fit: cover;
     border: 5px solid #7695FF; /* Adds a border around the profile picture */
 }
-    
+  
